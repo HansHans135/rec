@@ -33,7 +33,7 @@ async def on_message(message):
                 fileTest = f"data/{message.channel.id}.txt"
                 os.remove(fileTest)
             else:
-                await message.channel.send('已結束錄製!!', file=discord.File(f"data/{message.channel.id}.txt"))
+                await message.channel.send('沒有在錄製!!')
             
     filepath = f"data/{message.channel.id}.txt"
     if os.path.isfile(filepath):
