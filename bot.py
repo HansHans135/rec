@@ -35,4 +35,4 @@ async def on_message(message):
         with open(f"data/{message.channel.id}.txt", 'a') as filt:
             filt.write(f'{now}|{message.author}:{message.content}\n')
         
-client.run("OTMxNTA3NDkyODM4NTc2MjA4.YeFb9A.yDSK1Pa6JUfrH8KUdZF-K3EbGXc") 
+client.run("owo") 
