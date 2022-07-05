@@ -17,11 +17,12 @@ async def on_message(message):
         if message.author.guild_permissions.manage_messages:
             filepath = f"data/{message.channel.id}.txt"
             if os.path.isfile(filepath):
+                await message.channel.send('已經在錄製!!')
+            else:
                 with open(f"data/{message.channel.id}.txt", 'a') as filt:
                     filt.write(f'開始時間:{now}\n頻道名稱:{message.channel.name}\n開始人:{message.author}\n以下為詳細的對話紀錄:\n\n\n')
                 await message.channel.send('已開始錄製!!')
-            else:
-                await message.channel.send('已經在錄製!!')
+                
                 
     if message.content == 'h!recstop':
         if message.author.guild_permissions.manage_messages:
@@ -40,4 +41,4 @@ async def on_message(message):
         with open(f"data/{message.channel.id}.txt", 'a') as filt:
             filt.write(f'{now}|{message.author}:{message.content}\n')
         
-client.run("TOKEN") 
+client.run("token") 
